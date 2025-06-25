@@ -18,13 +18,16 @@ gsettings set org.gnome.shell.keybindings screenshot-window '[]'
 
 # Create custom shortcuts to recreate screenshot behaviour
 # FIXME: Overrides all other custom shortcuts. Fine for now but will need to be fixed for any other custom shortcuts. Probably by creating a script explicitely for appending new custom shortcuts.
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
+custom_shortcuts_parent_schema="org.gnome.settings-daemon.plugins.media-keys"
+custom_shortcuts_path_prefix="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Print Screen"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "gnome-screenshot -cf /tmp/snip.png"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "Print"
+gsettings set $custom_shortcuts_parent_schema custom-keybindings "['${custom_shortcuts_path_prefix}0/', '${custom_shortcuts_path_prefix}1/']"
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "Snipping Tool"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "gnome-screenshot -acf /tmp/snip.png"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding "<Super><Shift>s"
+gsettings set ${custom_shortcuts_parent_schema}.custom-keybinding:${custom_shortcuts_path_prefix}0/ name "Print Screen"
+gsettings set ${custom_shortcuts_parent_schema}.custom-keybinding:${custom_shortcuts_path_prefix}0/ command "gnome-screenshot -cf /tmp/snip.png"
+gsettings set ${custom_shortcuts_parent_schema}.custom-keybinding:${custom_shortcuts_path_prefix}0/ binding "Print"
+
+gsettings set ${custom_shortcuts_parent_schema}.custom-keybinding:${custom_shortcuts_path_prefix}1/ name "Snipping Tool"
+gsettings set ${custom_shortcuts_parent_schema}.custom-keybinding:${custom_shortcuts_path_prefix}1/ command "gnome-screenshot -acf /tmp/snip.png"
+gsettings set ${custom_shortcuts_parent_schema}.custom-keybinding:${custom_shortcuts_path_prefix}1/ binding "<Super><Shift>s"
 
