@@ -1,0 +1,5 @@
+vim.fn.matchadd("TodoTag", [[TODO:]])
+vim.fn.matchadd("FixmeTag", [[FIXME:]])
+vim.fn.matchadd("NoteTag", [[NOTE:]])
+vim.fn.matchadd("MarkTag", [[MARK:]])
+vim.fn.matchadd("HackTag", [[HACK:]])
