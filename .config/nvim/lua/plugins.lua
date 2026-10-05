@@ -245,14 +245,17 @@ return {
 
             -- Additional overrides
             vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
-            vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#1f1f1f", ctermbg = 8 })
+            vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#101010", ctermbg = 0 })
+            vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#1f1f1f", ctermbg = 8 })
+
             vim.api.nvim_set_hl(0, "TodoTag", { fg = "#ffffff", bg = "#ffbd2a" })
             vim.api.nvim_set_hl(0, "FixmeTag", { fg = "#ffffff", bg = "#f06292" })
             vim.api.nvim_set_hl(0, "NoteTag", { fg = "#ffffff", bg = "#0078d4" })
+
             vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "#75beff", bg = "#1f1f1f" })
             vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { fg = "#cca700", bg = "#1f1f1f" })
             vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#f85149", bg = "#1f1f1f" })
-            vim.api.nvim_set_hl(0, "NoteTag", { fg = "#ffffff", bg = "#0078d4" })
+
             vim.api.nvim_set_hl(0, "TrailingWhitespace", { bg = "#d00000", ctermbg = 1 })
             -- FIXME: vim.api.nvim_set_hl(0, "Cursor", { blend = 100 })
             vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#1f1f1f" })
