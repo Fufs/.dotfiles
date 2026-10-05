@@ -37,7 +37,8 @@ require("config.behaviour.keybinds").setup({
       { mode = "n", lhs = "<C-0>", rhs = "10gt" },
 
       -- Visual
-
+      { mode = "v", lhs = "<Tab>", rhs = ">gv" },
+      { mode = "v", lhs = "<S-Tab>", rhs = "<gv" },
       ---- Selecting with Shift
       { mode = "n", lhs = { "<S-Left>", "H" }, rhs = "vh" },
       { mode = "n", lhs = { "<S-Down>", "J" }, rhs = "vj" },
@@ -51,6 +52,8 @@ require("config.behaviour.keybinds").setup({
       { mode = "v", lhs = { "<S-Down>", "J" }, rhs = "j" },
       { mode = "v", lhs = { "<S-Up>", "K" }, rhs = "k" },
       { mode = "v", lhs = { "<S-Right>", "L" }, rhs = "l" },
+      -- Insert
+      { mode = "i", lhs = "<S-Tab>", rhs = "<C-d>" },
       -- LSP
       { mode = "n", lhs = "<C-k>", rhs = vim.lsp.buf.hover },
       { mode = "n", lhs = "<C-_>", rhs = gcc, { remap = true } },
