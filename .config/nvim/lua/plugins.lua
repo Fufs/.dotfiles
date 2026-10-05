@@ -133,16 +133,27 @@ return {
          "nvim-tree/nvim-web-devicons", -- optional, but recommended
       },
       lazy = false, -- neo-tree will lazily load itself
-      opts = {
-         event_handlers = {
-            {
-               event = "file_opened",
-               handler = function(file_path)
-                 require("neo-tree.command").execute({ action = "close" })
-               end
+      config = function()
+         local command = require("neo-tree.command")
+         local function close()
+            command.execute({ action = "close" })
+         end
+
+         require("neo-tree").setup({
+            event_handlers = {
+               {
+                  event = "file_open_requested",
+                  handler = close
+               },
             },
-         }
-      }
+            window = {
+               mappings = {
+                  ["<Esc>"] = close,
+                  ["<C-b>"] = close,
+               }
+            }
+         })
+      end,
    },
    {
         "folke/trouble.nvim",

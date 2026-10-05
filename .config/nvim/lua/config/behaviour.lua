@@ -23,7 +23,7 @@ require("config.behaviour.keybinds").setup({
       { mode = "n", lhs = "<S-Enter>", rhs = "O<Esc>j" },
       { mode = "n", lhs = "<Tab>", rhs = ">>" },
       { mode = "n", lhs = "<S-Tab>", rhs = "<<" },
-      { mode = "n", lhs = "<Esc>", rhs = Utils.close_floats },
+      { mode = "n", lhs = "<C-b>", rhs = function() vim.cmd(":Neotree") end },
       -- Visual
 
       ---- Selecting with Shift
