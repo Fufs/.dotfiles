@@ -6,7 +6,7 @@ local M = {}
 ---@param opts {
 ---   show_line_numbers: boolean,
 ---   use_relative_numbers: boolean,
----   line_number_cols: int,
+---   line_number_cols: integer,
 ---}
 function M.setup(opts)
    vim.opt.number = Utils.or_default(opts.show_line_numbers, true)
