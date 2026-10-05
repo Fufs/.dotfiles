@@ -24,6 +24,18 @@ require("config.behaviour.keybinds").setup({
       { mode = "n", lhs = "<Tab>", rhs = ">>" },
       { mode = "n", lhs = "<S-Tab>", rhs = "<<" },
       { mode = "n", lhs = "<C-b>", rhs = function() vim.cmd(":Neotree") end },
+      ---- Tab jumps
+      { mode = "n", lhs = "<C-1>", rhs = "1gt" },
+      { mode = "n", lhs = "<C-2>", rhs = "2gt" },
+      { mode = "n", lhs = "<C-3>", rhs = "3gt" },
+      { mode = "n", lhs = "<C-4>", rhs = "4gt" },
+      { mode = "n", lhs = "<C-5>", rhs = "5gt" },
+      { mode = "n", lhs = "<C-6>", rhs = "6gt" },
+      { mode = "n", lhs = "<C-7>", rhs = "7gt" },
+      { mode = "n", lhs = "<C-8>", rhs = "8gt" },
+      { mode = "n", lhs = "<C-9>", rhs = "9gt" },
+      { mode = "n", lhs = "<C-0>", rhs = "10gt" },
+
       -- Visual
 
       ---- Selecting with Shift

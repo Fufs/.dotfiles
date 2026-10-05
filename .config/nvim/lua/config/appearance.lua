@@ -16,4 +16,5 @@ require("config.appearance.ruler").setup({
    rulers = { 80, 100, 105 },
 })
 require("config.appearance.special_characters")
+require("config.appearance.tabpages").setup({})
 require("config.appearance.trailing_spaces")

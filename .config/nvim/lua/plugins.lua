@@ -150,6 +150,17 @@ return {
                mappings = {
                   ["<Esc>"] = close,
                   ["<C-b>"] = close,
+                  ---@param state neotree.StateWithTree
+                  ---@param selected_nodes neotree.SelectedNodes
+                  ["T"] = function (state, selected_nodes)
+                     -- Opens the file in a new tab but doesn't focus it
+                     if selected_nodes == nil then
+                        local curr_tab = vim.fn.tabpagenr()
+                        state.commands.open_tabnew(state)
+                        vim.cmd("tabnext " .. curr_tab)
+                        command.execute({ show = true })
+                     end
+                  end
                }
             }
          })
