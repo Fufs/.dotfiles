@@ -2,6 +2,12 @@ local Utils = require("utils")
 
 require("config.behaviour.indents")
 
+local function escape_handler()
+   -- TODO: Escape should only perform one of the actions in a hierarichal order
+   Utils.close_floats()
+   vim.cmd("noh")
+end
+
 local function gcc()
    vim.api.nvim_feedkeys("gcc", "m", false)
 end
@@ -24,6 +30,7 @@ require("config.behaviour.keybinds").setup({
       { mode = "n", lhs = "<Tab>", rhs = ">>" },
       { mode = "n", lhs = "<S-Tab>", rhs = "<<" },
       { mode = "n", lhs = "<C-b>", rhs = function() vim.cmd(":Neotree") end },
+      { mode = "n", lhs = "<Esc>", rhs = escape_handler },
       ---- Tab jumps
       { mode = "n", lhs = "<C-1>", rhs = "1gt" },
       { mode = "n", lhs = "<C-2>", rhs = "2gt" },
