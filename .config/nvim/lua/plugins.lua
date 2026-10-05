@@ -4,12 +4,39 @@ return {
       lazy = false,
       build = ':TSUpdate',
       config = function()
+         vim.api.nvim_create_autocmd('User', {
+            pattern = 'TSUpdate',
+            callback = function()
+               local parsers = require('nvim-treesitter.parsers')
+
+               parsers.tmux = {
+                  install_info = {
+                     url = "https://github.com/Freed-Wu/tree-sitter-tmux",
+                     branch = "main",
+                     revision = "26c21424955a719bfdbb3f595265a5322200c261",
+                     queries = "queries",
+                  },
+                  tier = 2,
+               }
+
+               parsers.ghostty = {
+                  install_info = {
+                     url = "https://github.com/bezhermoso/tree-sitter-ghostty",
+                     revision = "a2075c3761a41449bb4faf69794c902dfef6d70e",
+                     queries = "queries/ghostty",
+                  },
+                  tier = 2,
+               }
+            end
+         })
+
+
          vim.api.nvim_create_autocmd('FileType', {
             pattern = "*",
             callback = function(args)
                local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
 
-               if vim.treesitter.language.add(lang) then
+               if lang ~= nil and vim.treesitter.language.add(lang) then
                   vim.treesitter.start(args.buf, lang)
                end
             end,
