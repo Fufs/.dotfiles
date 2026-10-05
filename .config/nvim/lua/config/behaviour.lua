@@ -57,3 +57,4 @@ require("config.behaviour.keybinds").setup({
       { mode = "v", lhs = "<C-_>", rhs = gc, { remap = true } },
    },
 })
+require("config.behaviour.workspace")
