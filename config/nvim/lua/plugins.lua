@@ -301,4 +301,7 @@ return {
          -- log_level = 'debug',
        },
    },
+   {
+      "lewis6991/gitsigns.nvim",
+   }
 }
