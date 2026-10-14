@@ -16,7 +16,8 @@ keybind = ctrl+6=text:\x1b[54;5u
 keybind = ctrl+7=text:\x1b[55;5u
 keybind = ctrl+8=text:\x1b[56;5u
 keybind = ctrl+9=text:\x1b[57;5u
-# Free alt+digit (default: goto_tab) for nvim
+
+## Free alt+digit (default: goto_tab) for nvim
 keybind = alt+1=unbind
 keybind = alt+digit_1=unbind
 keybind = alt+2=unbind
